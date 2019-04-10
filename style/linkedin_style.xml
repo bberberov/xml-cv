@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+xml-cv v0.1.0 | LinkedIn helper (HTML) style
+Copyright © 2019 Boian Berberov
+
+Released under the terms of the
+European Union Public License version 1.2 only.
+
+License text: https://joinup.ec.europa.eu/collection/eupl/eupl-text-11-12
+
+SPDX-License-Identifier: EUPL-1.2
+-->
+<style>
+body	{
+	max-width: 90ex;
+	margin: auto;
+}
+
+table	{
+	border-collapse: collapse;
+	margin: 1em;
+	padding: 1em;
+	min-width: 30em;
+}
+
+th,
+td
+{
+	border: 1pt solid;
+	text-align: left;
+	padding: 0.5em 1em;
+}
+
+th	{
+	vertical-align: top;
+}
+
+td	{
+	white-space: pre-wrap;
+}
+
+div.box	{
+	border: 1pt solid;
+	margin: 0.5em;
+	padding: 0.5em 1em;
+	display: inline-block;
+}
+</style>

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cv
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xml:lang='en-US'
+>
+	<meta>
+		<locations>
+			<multilang id='location-1'>
+				<location xml:lang='en-CA'>
+					<city></city>
+					<state></state>
+					<country></country>
+				</location>
+				<location xml:lang='en-US'>
+					<city></city>
+					<state></state>
+				</location>
+			</multilang>
+		</locations>
+		<entities>
+			<entity id='entity-1'>
+				<name></name>
+				<url></url>
+				<location xlink:href="#location-1" />
+			</entity>
+			<entity id='entity-2'>
+				<name xlink:href="#name-1" />
+				<division></division>
+				<subdivision></subdivision>
+				<url></url>
+				<location xlink:href="#location-1" />
+			</entity>
+		</entities>
+		<names>
+			<name id='name-1'></name>
+		</names>
+	</meta>
+
+	<data>
+		<name><given></given><surname></surname></name>
+		<email type='home'></email>
+		<phone type='home'></phone>
+		<url type='homepage'></url>
+		<url type='linkedin'></url>
+		<url type='github'></url>
+		<url type='gitlab'></url>
+		<address></address>
+
+		<strengths>
+			<item></item>
+			<item></item>
+			<item></item>
+			<item></item>
+		</strengths>
+
+		<edu>
+			<entity>
+				<name xlink:href="#name-1" />
+				<division></division>
+				<url></url>
+				<location xlink:href="#location-1" />
+			</entity>
+
+			<degree>
+				<bs></bs>
+				<minor></minor>
+				<minor></minor>
+			</degree>
+			<degree>
+				<bs></bs>
+			</degree>
+
+			<from></from>
+			<to></to>
+
+			<courses>
+				<title></title>
+				<item></item>
+				<item></item>
+			</courses>
+			<courses>
+				<title></title>
+				<item></item>
+				<item></item>
+			</courses>
+
+			<projects>
+				<title></title>
+				<item><term></term></item>
+				<item></item>
+			</projects>
+			<projects>
+				<title></title>
+				<item><term></term></item>
+				<item></item>
+			</projects>
+
+			<org>
+				<name></name>
+				<pos>
+					<name></name>
+					<from></from>
+					<to></to>
+				</pos>
+			</org>
+			<org>
+				<name></name>
+				<pos>
+					<name></name>
+					<from></from>
+					<to></to>
+					<activity><term></term></activity>
+					<activity><term></term></activity>
+					<activity><term></term></activity>
+				</pos>
+				<activity><term></term></activity>
+				<activity><term></term></activity>
+				<activity><term></term></activity>
+			</org>
+		</edu>
+
+		<exp type='Work'>
+			<entity xlink:href='#entity-1' />
+			<title></title>
+			<from></from>
+			<to></to>
+			<details type='achievement'>
+				<item><term></term></item>
+				<item><term></term><term></term></item>
+				<item></item>
+			</details>
+			<details type='duty'>
+				<item><term></term></item>
+				<item><term></term><term></term></item>
+				<item></item>
+			</details>
+		</exp>
+		<exp type='Work'>
+			<entity xlink:href='#entity-1' />
+			<title></title>
+			<from></from>
+			<to></to>
+			<details type='achievement'>
+				<item><term></term></item>
+				<item><term></term><term></term></item>
+				<item></item>
+			</details>
+			<details type='duty'>
+				<item><term></term></item>
+				<item><term></term><term></term></item>
+				<item></item>
+			</details>
+		</exp>
+		<exp type='Work'>
+			<entity xlink:href='#entity-2' />
+			<title></title>
+			<from></from>
+			<to></to>
+			<details type='achievement'>
+				<item><term></term></item>
+				<item><term></term><term></term></item>
+				<item></item>
+			</details>
+			<details type='duty'>
+				<item><term></term></item>
+				<item><term></term><term></term></item>
+				<item></item>
+			</details>
+		</exp>
+		<exp type='Work'>
+			<entity>
+				<name xlink:href="#name-1" />
+				<division></division>
+				<url></url>
+				<location xlink:href="#location-1" />
+			</entity>
+			<title></title>
+			<from></from>
+			<to></to>
+			<details type='achievement'>
+				<item><term></term></item>
+				<item><term></term><term></term></item>
+				<item></item>
+			</details>
+			<details type='duty'>
+				<item><term></term></item>
+				<item><term></term><term></term></item>
+				<item></item>
+			</details>
+		</exp>
+
+		<skills>
+			<title></title>
+			<skills>
+				<title></title>
+				<skills>
+					<title></title>
+					<item></item>
+					<item></item>
+				</skills>
+				<skills>
+					<title></title>
+					<item></item>
+					<item></item>
+				</skills>
+			</skills>
+			<skills>
+				<title></title>
+				<item></item>
+				<item></item>
+				<item></item>
+			</skills>
+			<item></item>
+			<item></item>
+			<item></item>
+		</skills>
+		<skills>
+			<title></title>
+			<skills>
+				<title></title>
+				<skills>
+					<title></title>
+					<item></item>
+					<item></item>
+				</skills>
+				<skills>
+					<title></title>
+					<item></item>
+					<item></item>
+				</skills>
+			</skills>
+			<skills>
+				<title></title>
+				<item></item>
+				<item></item>
+				<item></item>
+			</skills>
+			<item></item>
+			<item></item>
+			<item></item>
+		</skills>
+		<skills>
+			<item></item>
+			<item></item>
+			<item></item>
+		</skills>
+
+		<org>
+			<name></name>
+			<org>
+				<name></name>
+				<org>
+					<name></name>
+					<pos>
+						<name></name>
+						<from></from>
+						<to></to>
+					</pos>
+					<pos>
+						<name></name>
+						<from></from>
+						<to></to>
+					</pos>
+					<activity></activity>
+					<activity></activity>
+				</org>
+				<org>
+					<name></name>
+					<pos>
+						<name></name>
+						<from></from>
+						<to></to>
+					</pos>
+					<pos>
+						<name></name>
+						<from></from>
+						<to></to>
+					</pos>
+					<activity></activity>
+					<activity></activity>
+				</org>
+				<pos>
+					<name></name>
+					<from></from>
+					<to></to>
+				</pos>
+				<pos>
+					<name></name>
+					<from></from>
+					<to></to>
+				</pos>
+				<activity></activity>
+				<activity></activity>
+			</org>
+		</org>
+		<org>
+			<name></name>
+			<pos>
+				<name></name>
+				<from></from>
+				<to></to>
+			</pos>
+			<activity></activity>
+			<activity></activity>
+		</org>
+
+		<noref>References available upon request, to protect the individuals' personally identifiable information from aggregation</noref>
+		<ref></ref>
+	</data>
+</cv>
