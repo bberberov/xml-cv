@@ -35,6 +35,10 @@ SPDX-License-Identifier: EUPL-1.2
 			svg:font-family="'Droid Sans Fallback'"
 			style:font-family-generic="swiss"
 			style:font-pitch="variable"/>
+		<style:font-face style:name="Roboto"
+			svg:font-family="Roboto"
+			style:font-adornments="Regular"
+			style:font-pitch="variable"/>
 		<style:font-face style:name="Source Sans Pro"
 			svg:font-family="'Source Sans Pro'"
 			style:font-adornments="Regular"
@@ -55,7 +59,7 @@ SPDX-License-Identifier: EUPL-1.2
 			style:font-adornments="Light"
 			style:font-family-generic="swiss"
 			style:font-pitch="variable"/>
-		</office:font-face-decls>
+	</office:font-face-decls>
 
 	<office:styles>
 		<style:style style:name="Standard"
@@ -213,8 +217,8 @@ SPDX-License-Identifier: EUPL-1.2
 			</style:paragraph-properties>
 		</style:style>
 		<style:style style:name="List_20_1" style:display-name="List 1" style:parent-style-name="List"
-			   style:family="paragraph"
-			   style:class="list">
+			style:family="paragraph"
+			style:class="list">
 			<style:paragraph-properties
 				fo:margin-left="0in"
 				fo:margin-right="0in"
@@ -226,9 +230,9 @@ SPDX-License-Identifier: EUPL-1.2
 				fo:keep-together="always"/>
 		</style:style>
 		<style:style style:name="List_20_1_20_Start" style:display-name="List 1 Start" style:parent-style-name="List_20_1"
-			   style:family="paragraph"
-			   style:next-style-name="List_20_1_20_Cont."
-			   style:class="list">
+			style:family="paragraph"
+			style:next-style-name="List_20_1_20_Cont."
+			style:class="list">
 			<style:paragraph-properties
 				fo:margin-left="0in"
 				fo:margin-right="0in"
@@ -237,9 +241,9 @@ SPDX-License-Identifier: EUPL-1.2
 				fo:keep-with-next="always"/>
 		</style:style>
 		<style:style style:name="List_20_1_20_Cont." style:display-name="List 1 Cont." style:parent-style-name="List_20_1"
-			   style:family="paragraph"
-			   style:next-style-name="List_20_1_20_Cont."
-			   style:class="list">
+			style:family="paragraph"
+			style:next-style-name="List_20_1_20_Cont."
+			style:class="list">
 			<style:paragraph-properties
 				fo:margin-left="0in"
 				fo:margin-right="0in"
@@ -560,7 +564,7 @@ SPDX-License-Identifier: EUPL-1.2
 
 	<office:automatic-styles>
 		<style:style style:name="P1" style:parent-style-name="Standard" style:master-page-name="First_20_Page"
-			   style:family="paragraph">
+			style:family="paragraph">
 			<style:text-properties />
 		</style:style>
 		<style:page-layout style:name="Page">
