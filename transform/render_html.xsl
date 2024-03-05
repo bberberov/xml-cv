@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!--
 xml-cv v0.1.0 | Plain HTML rendering transform
-Copyright © 2018–2019 Boian Berberov
+Copyright © 2018–2019, 2021 Boian Berberov
 
 Released under the terms of the
 European Union Public License version 1.2 only.
@@ -14,43 +14,57 @@ SPDX-License-Identifier: EUPL-1.2
 	xmlns:xsl='http://www.w3.org/1999/XSL/Transform'
 	version='1.0'>
 	<xsl:import href="common.xsl"/>
-	<xsl:output method='html' indent='yes' encoding='UTF-8'/>
+	<xsl:output method='html' indent='no' encoding='UTF-8'/>
 	<xsl:param name='lang'/>
 
 	<!-- Common -->
 
 		<!-- Term -->
 	<xsl:template match='term'>
-		<em>
-			<xsl:apply-templates/>
-		</em>
+		<em><xsl:apply-templates/></em>
 	</xsl:template>
 
 		<!-- Lists -->
 	<xsl:template name='list'>
 		<xsl:choose>
-			<xsl:when test='./*[name()=name(current())]'>
+			<!-- Outline -->
+			<xsl:when test='*[name()=name( current() )]'>
 				<li>
 					<p>
-						<xsl:apply-templates select='./title'/>
+						<xsl:apply-templates select='./title | ./name'/>
 					</p>
 					<ul>
-						<xsl:apply-templates select='./*[name()=name(current())]'/>
-						<xsl:apply-templates select='./item' mode='list'/>
+						<xsl:apply-templates select='./item | ./*[name()=name( current() )]' mode='list'/>
 					</ul>
 				</li>
 			</xsl:when>
-			<xsl:when test='./title'>
-				<li>
-					<p>
-						<xsl:apply-templates select='./title' />
-						<xsl:call-template name='colon-space' />
-						<xsl:apply-templates select='./item' mode='collapsed' />
-					</p>
-				</li>
+			<!-- Named List -->
+			<xsl:when test='./title | ./name'>
+				<xsl:choose>
+					<xsl:when test='@list = "true"'>
+						<li>
+							<p>
+								<xsl:apply-templates select='./title | ./name'/>
+							</p>
+							<ul>
+								<xsl:apply-templates select='item' mode='list'/>
+							</ul>
+						</li>
+					</xsl:when>
+					<xsl:otherwise>
+						<li>
+							<p>
+								<xsl:apply-templates select='./title | ./name'/>
+								<xsl:call-template name='colon-space'/>
+								<xsl:apply-templates select='./item' mode='collapsed'/>
+							</p>
+						</li>
+					</xsl:otherwise>
+				</xsl:choose>
 			</xsl:when>
+			<!-- Plain List -->
 			<xsl:otherwise>
-				<xsl:apply-templates select='./item' mode='list' />
+				<xsl:apply-templates select='./item' mode='list'/>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
@@ -58,17 +72,17 @@ SPDX-License-Identifier: EUPL-1.2
 	<xsl:template name='list-item'>
 		<li>
 			<p>
-				<xsl:apply-templates />
+				<xsl:apply-templates/>
 			</p>
 		</li>
 	</xsl:template>
 
 	<xsl:template match='item' mode='list'>
-		<xsl:call-template name='list-item' />
+		<xsl:call-template name='list-item'/>
 	</xsl:template>
 
 	<xsl:template match='item' mode='collapsed'>
-		<xsl:call-template name='comma-list' />
+		<xsl:call-template name='comma-list'/>
 	</xsl:template>
 
 		<!-- Header -->
@@ -95,7 +109,7 @@ SPDX-License-Identifier: EUPL-1.2
 		<div class='entity-line'>
 			<xsl:apply-templates select='./entity'/>
 			<span style='float: right;'>
-				<xsl:call-template name='from-to' />
+				<xsl:call-template name='entity-from-to' />
 			</span>
 		</div>
 	</xsl:template>
@@ -144,7 +158,7 @@ SPDX-License-Identifier: EUPL-1.2
 				<xsl:apply-templates select='./name'/>
 				<xsl:if test='to'>
 					<span style='float: right;'>
-						<xsl:call-template name='from-to' />
+						<xsl:call-template name='pos-from-to' />
 					</span>
 				</xsl:if>
 			</p>

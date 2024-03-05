@@ -3,7 +3,7 @@
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 	xml:lang='en-US'
 >
-	<meta>
+	<refs>
 		<locations>
 			<multilang id='location-1'>
 				<location xml:lang='en-CA'>
@@ -34,10 +34,17 @@
 		<names>
 			<name id='name-1'></name>
 		</names>
-	</meta>
+		<titles>
+			<title id='title-1'></title>
+		</titles>
+		<items>
+			<item id='title-1'></item>
+		</items>
+	</refs>
 
 	<data>
-		<name><given></given><surname></surname></name>
+		<name xml:lang="en-CA"><given></given><surname></surname></name>
+		<name xml:lang="en-US"><given></given><surname></surname></name>
 		<email type='home'></email>
 		<phone type='home'></phone>
 		<url type='homepage'></url>
@@ -46,12 +53,7 @@
 		<url type='gitlab'></url>
 		<address></address>
 
-		<strengths>
-			<item></item>
-			<item></item>
-			<item></item>
-			<item></item>
-		</strengths>
+		<summary></summary>
 
 		<edu>
 			<entity>
@@ -73,27 +75,24 @@
 			<from></from>
 			<to></to>
 
-			<courses>
+			<details>
 				<title></title>
 				<item></item>
 				<item></item>
-			</courses>
-			<courses>
+			</details>
+			<details>
+				<name></name>
+				<item></item>
+				<item></item>
+			</details>
+			<details>
 				<title></title>
-				<item></item>
-				<item></item>
-			</courses>
-
-			<projects>
-				<title></title>
-				<item><term></term></item>
-				<item></item>
-			</projects>
-			<projects>
-				<title></title>
-				<item><term></term></item>
-				<item></item>
-			</projects>
+				<details>
+					<title></title>
+					<item><term></term></item>
+					<item></item>
+				</details>
+			</details>
 
 			<org>
 				<name></name>
@@ -124,6 +123,7 @@
 			<title></title>
 			<from></from>
 			<to></to>
+			<summary></summary>
 			<details type='achievement'>
 				<item><term></term></item>
 				<item><term></term><term></term></item>
@@ -140,6 +140,7 @@
 			<title></title>
 			<from></from>
 			<to></to>
+			<summary></summary>
 			<details type='achievement'>
 				<item><term></term></item>
 				<item><term></term><term></term></item>
@@ -156,6 +157,7 @@
 			<title></title>
 			<from></from>
 			<to></to>
+			<summary></summary>
 			<details type='achievement'>
 				<item><term></term></item>
 				<item><term></term><term></term></item>
@@ -191,55 +193,12 @@
 
 		<skills>
 			<title></title>
-			<skills>
-				<title></title>
-				<skills>
-					<title></title>
-					<item></item>
-					<item></item>
-				</skills>
-				<skills>
-					<title></title>
-					<item></item>
-					<item></item>
-				</skills>
-			</skills>
-			<skills>
-				<title></title>
-				<item></item>
-				<item></item>
-				<item></item>
-			</skills>
 			<item></item>
 			<item></item>
 			<item></item>
 		</skills>
 		<skills>
 			<title></title>
-			<skills>
-				<title></title>
-				<skills>
-					<title></title>
-					<item></item>
-					<item></item>
-				</skills>
-				<skills>
-					<title></title>
-					<item></item>
-					<item></item>
-				</skills>
-			</skills>
-			<skills>
-				<title></title>
-				<item></item>
-				<item></item>
-				<item></item>
-			</skills>
-			<item></item>
-			<item></item>
-			<item></item>
-		</skills>
-		<skills>
 			<item></item>
 			<item></item>
 			<item></item>

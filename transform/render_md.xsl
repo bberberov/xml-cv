@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!--
 xml-cv v0.1.0 | Markdown rendering transform
-Copyright © 2018–2019 Boian Berberov
+Copyright © 2018–2019, 2021 Boian Berberov
 
 Released under the terms of the
 European Union Public License version 1.2 only.
@@ -117,7 +117,7 @@ SPDX-License-Identifier: EUPL-1.2
 	<xsl:template name='entity-line'>
 		<xsl:apply-templates select='./entity'/>
 		<xsl:text>&#8195;</xsl:text>
-		<xsl:call-template name='from-to' />
+		<xsl:call-template name='entity-from-to' />
 	</xsl:template>
 
 		<!-- org, pos, activity -->
@@ -185,7 +185,7 @@ SPDX-License-Identifier: EUPL-1.2
 		<xsl:apply-templates select='./name'/>
 		<xsl:if test='to'>
 			<xsl:text> (</xsl:text>
-			<xsl:call-template name='from-to' />
+			<xsl:call-template name='pos-from-to' />
 			<xsl:text>)</xsl:text>
 		</xsl:if>
 		<xsl:text>&#10;</xsl:text>

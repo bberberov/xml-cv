@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!--
 xml-cv v0.1.0 | Adapting transform
-Copyright © 2019 Boian Berberov
+Copyright © 2019, 2021, 2024 Boian Berberov
 
 Released under the terms of the
 European Union Public License version 1.2 only.
@@ -17,19 +17,27 @@ SPDX-License-Identifier: EUPL-1.2
 	extension-element-prefixes="date math"
 	version='1.0'>
 	<xsl:import href="common.xsl"/>
-	<xsl:output method='xml' indent='yes' encoding='UTF-8' />
+	<xsl:output method='xml' indent='no' encoding='UTF-8'/>
 	<xsl:param name='years'>10</xsl:param>
 
 	<xsl:template match='data/exp'>
-		<xsl:if test='math:abs( date:year() - date:year(./to) ) &lt; number($years)' >
-			<xsl:call-template name='identity'/>
-		</xsl:if>
-	</xsl:template>
-
-	<xsl:template match='data/edu/org/pos/from|data/edu/org/pos/to'>
-		<xsl:if test='math:abs( date:year() - date:year(.) ) &lt; number($years)' >
-			<xsl:call-template name='identity'/>
-		</xsl:if>
+		<xsl:choose>
+			<xsl:when test='not(./to)'>
+				<xsl:call-template name='identity'/>
+			</xsl:when>
+			<xsl:when test='
+				math:abs( date:year() - date:year(./from) ) &lt; number($years)
+			'>
+				<xsl:call-template name='identity'/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:if test='
+					math:abs( date:year() - date:year(./to)   ) &lt; number($years)
+				'>
+					<xsl:call-template name='identity'/>
+				</xsl:if>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 
 	<xsl:template match='@*|node()'>

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!--
 xml-cv v0.1.0 | Generic (pass-through) transform
-Copyright © 2019 Boian Berberov
+Copyright © 2019, 2021 Boian Berberov
 
 Released under the terms of the
 European Union Public License version 1.2 only.
@@ -14,7 +14,7 @@ SPDX-License-Identifier: EUPL-1.2
 	xmlns:xsl='http://www.w3.org/1999/XSL/Transform'
 	version='1.0'>
 	<xsl:import href="common.xsl"/>
-	<xsl:output method='xml' indent='yes' encoding='UTF-8' />
+	<xsl:output method='xml' indent='no' encoding='UTF-8' />
 
 	<xsl:template match="@*|node()">
 		<xsl:call-template name='identity'/>

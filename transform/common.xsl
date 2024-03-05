@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!--
 xml-cv v0.1.0 | Common templates
-Copyright © 2018–2019 Boian Berberov
+Copyright © 2018–2019, 2021, 2024 Boian Berberov
 
 Released under the terms of the
 European Union Public License version 1.2 only.
@@ -36,7 +36,7 @@ SPDX-License-Identifier: EUPL-1.2
 	<xsl:template name='colon-space'><xsl:text>:&#8194;</xsl:text></xsl:template><!-- EM space -->
 
 	<xsl:template name='comma-list'>
-		<xsl:apply-templates />
+		<xsl:apply-templates/>
 		<xsl:if test='position() != last()'><xsl:text>, </xsl:text></xsl:if>
 	</xsl:template>
 
@@ -53,20 +53,38 @@ SPDX-License-Identifier: EUPL-1.2
 		<xsl:value-of select='date:year(.)' />
 	</xsl:template>
 
-	<xsl:template name='from-to'>
+	<!-- from and to text formatting -->
+	<xsl:template name='entity-from-to'>
 		<xsl:if test='./from'>
-			<xsl:apply-templates select='./from' mode='full' />
+			<xsl:apply-templates select='./from' mode='full'/>
 			<xsl:text> &#8211; </xsl:text><!-- EN dash -->
-			<xsl:if test='not(./to)'>
+		</xsl:if>
+		<xsl:choose>
+			<xsl:when test='./to'>
+				<xsl:apply-templates select='./to' mode='full'/>
+			</xsl:when>
+			<xsl:otherwise>
 				<xsl:text>Present</xsl:text>
-			</xsl:if>
-		</xsl:if>
-		<xsl:if test='./to'>
-			<xsl:apply-templates select='./to' mode='full' />
-		</xsl:if>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 
-	<!-- EDU -->
+	<xsl:template name='pos-from-to'>
+		<xsl:if test='./from'>
+			<xsl:apply-templates select='./from' mode='year'/>
+			<xsl:text> &#8211; </xsl:text><!-- EN dash -->
+		</xsl:if>
+		<xsl:choose>
+			<xsl:when test='./to'>
+				<xsl:apply-templates select='./to' mode='year'/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:text>Present</xsl:text>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
+	<!-- Education -->
 	<xsl:template name='edu-degree-ms'>
 		<xsl:text>Masters of Science</xsl:text>
 	</xsl:template>
@@ -103,7 +121,7 @@ SPDX-License-Identifier: EUPL-1.2
 		<xsl:text>minor in </xsl:text><xsl:value-of select='.' />
 	</xsl:template>
 
-	<!-- ENTITY -->
+	<!-- `entity` text formatting -->
 	<xsl:template match='entity'>
 		<xsl:if test='./division'>
 			<xsl:if test='./subdivision'>
@@ -124,14 +142,16 @@ SPDX-License-Identifier: EUPL-1.2
 		</xsl:if>
 	</xsl:template>
 
+	<!-- Organization Position text formatting -->
 	<xsl:template match='pos' mode='collapsed'>
 		<xsl:value-of select='./name' />
 		<xsl:if test='to'>
-			<xsl:text> (</xsl:text><xsl:call-template name='from-to' /><xsl:text>)</xsl:text>
+			<xsl:text> (</xsl:text><xsl:call-template name='pos-from-to' /><xsl:text>)</xsl:text>
 		</xsl:if>
 		<xsl:if test='position() != last()'><xsl:text>, </xsl:text></xsl:if>
 	</xsl:template>
-	
+
+	<!-- Person's Name -->
 	<xsl:template match='/cv/data/name'>
 		<xsl:value-of select='./given' /><xsl:text> </xsl:text><xsl:value-of select='./surname' />
 	</xsl:template>
